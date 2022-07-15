@@ -1,0 +1,38 @@
+<div class="container my-5 ">
+    <h1 mb-3>Flights</h1>
+    <a routerLink="/flight/add" class="btn btn-success my-3">Add Flights</a>
+    <table class="table table-bordered table-striped table-hover" style="background-color:#f3b2f3 ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Airline</th>
+                <th>From location</th>
+                <th>To location</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th> </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let flight of flights">
+               <td>{{flight.id}}</td>
+               <td>{{flight.code}}</td>
+               <td>{{flight.airlineName}}</td>
+               <td>{{flight.fromAirportName}}</td>
+               <td>{{flight.toAirportName}}</td>
+               <td>{{flight.address1}}</td>
+               <td>{{flight.cityName}}</td>
+               <td>{{flight.pincode}}</td>
+               <td>{{flight.telephone1}}</td>
+               <td>{{flight.email1}}</td>
+               <td><a [routerLink]="['/flight','edit',flight.id]" class="btn btn-warning">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!flights">No Flight found</p>
+</div>

@@ -1,0 +1,25 @@
+<div class="container my-5">
+    <h1 mb-3 >City</h1>
+    <a routerLink="/city/add" class="btn btn-success my-3">Add City</a>
+    <table class="table table-bordered table-striped table-hover" style="background-color:#f3b2f3 ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th> </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let city of cities">
+               <td>{{city.id}}</td>
+               <td>{{city.name}}</td>
+               <td>{{city.countryName}}</td>
+               <td><a [routerLink]="['/city','edit',city.id]" class="btn btn-warning">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!cities">No city found</p>
+</div>
+

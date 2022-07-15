@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="mb-3">Edit Hotel</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="updateHotel()">
+                <div class="form-group">
+                    <label for="" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id" readonly name="id" [(ngModel)]="hotelDetails.id">
+                  </div>
+                <div class="form-group">
+                  <label for="name" class="form-label">Enter Hotel name</label>
+                  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="hotelDetails.name">
+                </div>
+                <div class="form-group">
+                    <label for="star" class="form-label">Enter Hotel rating</label>
+                    <input type="text" class="form-control" id="star" name="star" [(ngModel)]="hotelDetails.star">
+                  </div>
+
+                <div class="form-group">
+                    <label for="cityRefId" class="form-label">Enter City Name</label>
+                    <!-- <input type="text" class="form-control" id="name" name="name" [(ngModel)]="addCityRequest.countryRef"> -->
+                    <select  class="form-control" name="cityRefId" [(ngModel)]="hotelDetails.cityRefId">  
+                          
+                      <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>  
+                  </select>
+                  </div>
+                <button type="submit" class="btn btn-primary mx-3">Update</button>
+                <button type="button" class="btn btn-danger" (click)="deleteHotel(hotelDetails.id)">Delete</button>
+              </form>
+        </div>
+    </div>
+    
+    </div>
+    
+
+

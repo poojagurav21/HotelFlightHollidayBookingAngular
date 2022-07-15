@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <h1 class="mb-3">Add Hotel</h1>
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="addHotel()">
+        <div class="form-group">
+          <label for="name" class="form-label">Enter Hotel name</label>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="addHotelRequest.name">
+        </div>
+
+        <div class="form-group">
+          <label for="star" class="form-label">Enter Hotel Rating</label>
+          <input type="number" class="form-control" id="star" name="star" [(ngModel)]="addHotelRequest.star">
+        </div>
+
+        <div class="form-group">
+          <label for="cityRefId" class="form-label">Enter City Name</label>
+          <!-- <input type="text" class="form-control" id="name" name="name" [(ngModel)]="addCityRequest.countryRef"> -->
+          <select class="form-control" name="cityRefId" [(ngModel)]="addHotelRequest.cityRefId">
+
+            <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add Customer</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addCustomer()">
+                <div class="form-group">
+                    <label for="firstName" class="form-label">Enter First name</label>
+                    <input type="text" class="form-control" id="fname" name="fname"
+                        [(ngModel)]="addCustomerRequest.firstName">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName" class="form-label">Enter Last name</label>
+                    <input type="text" class="form-control" id="lname" name="lname"
+                        [(ngModel)]="addCustomerRequest.lastName">
+                </div>
+
+                <div class="form-group">
+                    <label for="dateOfBirth" class="form-label">Enter Date of Birth</label>
+                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth"
+                        [(ngModel)]="addCustomerRequest.dateOfBirth">
+                </div>
+
+                <div class="form-group">
+                    <label for="address1" class="form-label">Enter Address</label>
+                    <input type="text" class="form-control" id="address1" name="address1"
+                        [(ngModel)]="addCustomerRequest.address1">
+                </div>
+
+                <div class="form-group">
+                    <label for="cityRefId" class="form-label">Enter City Name</label>
+                    <select class="form-control" name="cityRefId" [(ngModel)]="addCustomerRequest.cityRefId">
+                        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pincode" class="form-label">Enter Pincode</label>
+                    <input type="number" class="form-control" id="pincode" name="pincode"
+                        [(ngModel)]="addCustomerRequest.pincode">
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone1" class="form-label">Enter Telephone number</label>
+                    <input type="text" class="form-control" id="telephone1" name="telephone1"
+                        [(ngModel)]="addCustomerRequest.telephone1">
+                </div>
+
+                <div class="form-group">
+                    <label for="email1" class="form-label">Enter Email</label>
+                    <input type="text" class="form-control" id="email1" name="email1"
+                        [(ngModel)]="addCustomerRequest.email1">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>

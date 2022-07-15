@@ -1,0 +1,28 @@
+
+<div class="container my-5 ">
+    <h1 mb-3>HotelAmenities</h1>
+    <a routerLink="/hotelAmenities/add" class="btn btn-success my-3">Add HotelAmenities</a>
+    <table class="table table-bordered table-striped table-hover" style="background-color:#f3b2f3 ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hotel</th>
+                <th>Amenities</th>
+                
+                <th> </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let hotel of hotelAmenities">
+               <td>{{hotel.id}}</td>
+               <td>{{hotel.hotelName}}</td>
+               <td>{{hotel.amenitiesName}}</td>
+               
+               
+               <td><a [routerLink]="['/hotelAmenities','edit',hotel.id]" class="btn btn-warning">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!hotelAmenities">No Hotel found</p>
+</div>

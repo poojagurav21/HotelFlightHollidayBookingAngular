@@ -1,0 +1,32 @@
+<div class="container my-5 ">
+    <h1 mb-3>Airports</h1>
+    <a routerLink="/airport/add" class="btn btn-success my-3">Add Airport</a>
+    <table class="table table-bordered table-striped table-hover" style="background-color:#f3b2f3 ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th> </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let airport of airports">
+               <td>{{airport.id}}</td>
+               <td>{{airport.code}}</td>
+               <td>{{airport.address1}}</td>
+               <td>{{airport.cityName}}</td>
+               <td>{{airport.pincode}}</td>
+               <td>{{airport.telephone1}}</td>
+               <td>{{airport.email1}}</td>
+               <td><a [routerLink]="['/airport','edit',airport.id]" class="btn btn-warning">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!airports">No Airport found</p>
+</div>

@@ -1,0 +1,38 @@
+<div class="container my-5 ">
+    <h1 mb-3>Airlines</h1>
+    <a routerLink="/airline/add" class="btn btn-success my-3">Add Airline</a>
+    <table class="table table-bordered table-striped table-hover" style="background-color:#f3b2f3 ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>ShortName</th>
+                <th>Logo</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>Telephone </th>
+                <th>Email </th>
+                <th> </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let airline of airlines">
+               <td>{{airline.id}}</td>
+               <td>{{airline.name}}</td>
+               <td>{{airline.shortName}}</td>
+               <!-- <td>{{airline.logo}}</td> -->
+               <!-- <td><img src="{{airline.logo}}" width="80" height="50" alt="airlogo"></td> -->
+               <td><img src="\assets\images\airline.jpg" width="80" height="50"></td>
+               <td>{{airline.address1}}</td>
+               <td>{{airline.cityName}}</td>
+               <td>{{airline.pincode}}</td>
+               <td>{{airline.telephone1}}</td>
+               <td>{{airline.email1}}</td>
+               <td><a [routerLink]="['/airline','edit',airline.id]" class="btn btn-warning">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!airlines">No Airlines found</p>
+</div>

@@ -1,0 +1,20 @@
+<div class="container my-5">
+    <h1 mb-1>Amenities</h1>
+    <a routerLink="/amenities/add" class="btn btn-success my-3">Add Amenities</a>
+    <table class="table table-bordered table-striped table-hover" style="background-color:#f3b2f3 ">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th> </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let amenity of amenities">
+                <td>{{amenity.id}}</td>
+                <td>{{amenity.name}}</td>
+                <td>{{amenity.description}}</td>
+                <td><a [routerLink]="['/amenities','edit',amenity.id]" class="btn btn-warning">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
